@@ -1,0 +1,887 @@
+{
+  "scheduler": "gated-scheduler",
+  "language": "go",
+  "version": "1.0.0",
+  "benchmark_type": "kwok",
+  "config": {
+    "pods": 150,
+    "nodes": 4,
+    "clusters": 1,
+    "runs": 5,
+    "priority": "balanced",
+    "workload_type": "general",
+    "cr_threshold": 0.1,
+    "mixed_workload": false,
+    "timing_mode": "scheduling_only"
+  },
+  "aggregate": {
+    "throughput_pods_sec": {
+      "mean": 1555.9120544002103,
+      "std": 386.62980929605834,
+      "ci95_lo": 1075.9247009719272,
+      "ci95_hi": 2035.8994078284934,
+      "min": 1123.920662360164,
+      "max": 2035.5699330804464,
+      "cv_pct": 24.849078596868416
+    },
+    "p50_latency_ms": {
+      "mean": 6.0480239,
+      "std": 1.224761111704717,
+      "ci95_lo": 4.527525918586278,
+      "ci95_hi": 7.568521881413721,
+      "min": 4.7878585000000005,
+      "max": 7.9145129999999995,
+      "cv_pct": 20.250599732331036
+    },
+    "p95_latency_ms": {
+      "mean": 12.004934589999996,
+      "std": 5.115207230670908,
+      "ci95_lo": 5.654584146620519,
+      "ci95_hi": 18.355285033379474,
+      "min": 6.1345655,
+      "max": 17.415173199999995,
+      "cv_pct": 42.60920534237505
+    },
+    "p99_latency_ms": {
+      "mean": 13.506826632,
+      "std": 5.918046334083719,
+      "ci95_lo": 6.1597795883830315,
+      "ci95_hi": 20.853873675616967,
+      "min": 6.8110032,
+      "max": 20.238926479999993,
+      "cv_pct": 43.81522392582465
+    },
+    "p999_latency_ms": {
+      "mean": 13.744941832,
+      "std": 5.961624764380956,
+      "ci95_lo": 6.3437936949805,
+      "ci95_hi": 21.1460899690195,
+      "min": 6.903867305000001,
+      "max": 20.507083760000004,
+      "cv_pct": 43.37322658217093
+    },
+    "queue_reuse_rate": {
+      "mean": 0.1157142857142857,
+      "std": 0.019166296949998194,
+      "ci95_lo": 0.09191999999999999,
+      "ci95_hi": 0.1395085714285714,
+      "min": 0.09285714285714286,
+      "max": 0.1357142857142857,
+      "cv_pct": 16.56346649999844
+    },
+    "filter_pass_rate": {
+      "mean": 0.349434136314952,
+      "std": 0.014346519901532373,
+      "ci95_lo": 0.33162343483029305,
+      "ci95_hi": 0.367244837799611,
+      "min": 0.3302919708029197,
+      "max": 0.3685185185185185,
+      "cv_pct": 4.1056434991805055
+    },
+    "scheduled_count": {
+      "mean": 110.2,
+      "std": 3.898717737923586,
+      "ci95_lo": 105.35987861309243,
+      "ci95_hi": 115.04012138690757,
+      "min": 106,
+      "max": 114,
+      "cv_pct": 3.5378563865005312
+    },
+    "failed_count": {
+      "mean": 39.8,
+      "std": 3.898717737923586,
+      "ci95_lo": 34.959878613092435,
+      "ci95_hi": 44.64012138690756,
+      "min": 36,
+      "max": 44,
+      "cv_pct": 9.795773210863281
+    },
+    "peak_cpu_pct": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    },
+    "peak_memory_mb": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    },
+    "avg_cpu_pct": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    },
+    "avg_memory_mb": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    },
+    "enc_mean_latency_ms": {
+      "mean": 4.213145554258242,
+      "std": 1.4615134034880086,
+      "ci95_lo": 2.3987279028686195,
+      "ci95_hi": 6.027563205647864,
+      "min": 2.6468012291666656,
+      "max": 6.0978346666666665,
+      "cv_pct": 34.68936415004347
+    },
+    "non_enc_mean_latency_ms": {
+      "mean": 5.133235210164512,
+      "std": 1.117848598829831,
+      "ci95_lo": 3.7454653652507055,
+      "ci95_hi": 6.521005055078318,
+      "min": 3.684697137254904,
+      "max": 6.628812466666668,
+      "cv_pct": 21.776687665048684
+    },
+    "enc_p99_latency_ms": {
+      "mean": 11.730936873999992,
+      "std": 4.75324308540673,
+      "ci95_lo": 5.829952226904074,
+      "ci95_hi": 17.63192152109591,
+      "min": 6.503303020000001,
+      "max": 16.327194840000004,
+      "cv_pct": 40.518870201591824
+    },
+    "non_enc_p99_latency_ms": {
+      "mean": 13.119054317999996,
+      "std": 5.7580141887781355,
+      "ci95_lo": 5.970681572230193,
+      "ci95_hi": 20.2674270637698,
+      "min": 6.655429449999999,
+      "max": 20.317721279999986,
+      "cv_pct": 43.8904668675535
+    },
+    "migration_rate": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    },
+    "migration_count": {
+      "mean": 0,
+      "std": 0,
+      "ci95_lo": 0,
+      "ci95_hi": 0,
+      "min": 0,
+      "max": 0,
+      "cv_pct": 0
+    }
+  },
+  "per_run": [
+    {
+      "run": 1,
+      "throughput_pods_sec": 1867.3013744157108,
+      "duration_ms": 61.05067,
+      "scheduled": 114,
+      "failed": 36,
+      "queue_reuse_count": 19,
+      "queue_reuse_rate": 0.1357142857142857,
+      "migration_count": 0,
+      "migration_rate": 0,
+      "filter_pass_rate": 0.3530534351145038,
+      "latency_percentiles_ms": {
+        "p50": 5.294052499999999,
+        "p90": 6.5965699,
+        "p95": 7.037195199999999,
+        "p99": 7.859150160000003,
+        "p999": 8.153762270000003,
+        "max": 8.180454
+      },
+      "filter_percentiles_ms": {
+        "p50": 0.000892,
+        "p95": 0.00408049999999999,
+        "p99": 0.010489439999999933
+      },
+      "rank_percentiles_ms": {
+        "p50": 0.001092,
+        "p95": 0.004580999999999996,
+        "p99": 0.007229299999999999
+      },
+      "bind_percentiles_ms": {
+        "p50": 4.8213715,
+        "p95": 6.9538280499999985,
+        "p99": 7.619621019999993
+      },
+      "system": {
+        "peak_cpu_pct": 0,
+        "peak_memory_mb": 0,
+        "avg_cpu_pct": 0,
+        "avg_memory_mb": 0,
+        "cpu_samples": null,
+        "memory_samples": null
+      },
+      "encryption_overhead": {
+        "enc_pods": 52,
+        "non_enc_pods": 98,
+        "enc_mean_latency_ms": 3.2406669230769234,
+        "non_enc_mean_latency_ms": 4.45707682653061,
+        "enc_p99_latency_ms": 6.672898160000001,
+        "non_enc_p99_latency_ms": 7.951330300000001
+      },
+      "success_rate": 0.76,
+      "bind_conflicts": 0,
+      "bind_other_errors": 0,
+      "reserve_rejects": 0,
+      "reuse_fallbacks": 0,
+      "placement": {
+        "nodes": [
+          {
+            "name": "worker-1",
+            "cluster": "cluster0",
+            "region": "Asia",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 24,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-2",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 53,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-3",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 2600,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 3328,
+            "mem_capacity_mb": 15360,
+            "pods": 26,
+            "cpu_util": 0.325,
+            "mem_util": 0.21666666666666667
+          },
+          {
+            "name": "worker-4",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 4000,
+            "cpu_capacity_milli": 4000,
+            "mem_used_mb": 5120,
+            "mem_capacity_mb": 7168,
+            "pods": 11,
+            "cpu_util": 1,
+            "mem_util": 0.7142857142857143
+          }
+        ],
+        "cpu_jain": 0.889967800362246,
+        "cpu_imbalance": 0.11003219963775401,
+        "cpu_cv": 0.3516193368748849,
+        "mem_jain": 0.8863860891246309,
+        "mem_cv": 0.3580175275092194,
+        "pod_jain": 0.7769010043041606,
+        "pod_cv": 0.535878047343904,
+        "mean_cpu_util": 0.83125,
+        "max_cpu_util": 1,
+        "nodes_used": 4,
+        "nodes_empty": 0,
+        "nodes_over_90pct_cpu": 3,
+        "nodes_total": 4,
+        "shadow_checked": 0,
+        "misplaced": 0,
+        "misplacement_rate": 0,
+        "score_regret_mean": 0,
+        "score_regret_max": 0,
+        "score_regret_rel_mean": 0
+      },
+      "violations": {
+        "gdpr_pods": 49,
+        "isolation_pods": 28,
+        "encryption_pods": 33,
+        "residency_violations": 0,
+        "isolation_violations": 0,
+        "encryption_violations": 0,
+        "pods_violating": 0,
+        "pods_checked": 49,
+        "residency_violation_rate": 0,
+        "overall_violation_rate": 0
+      }
+    },
+    {
+      "run": 2,
+      "throughput_pods_sec": 2035.5699330804464,
+      "duration_ms": 52.073868,
+      "scheduled": 106,
+      "failed": 44,
+      "queue_reuse_count": 15,
+      "queue_reuse_rate": 0.10714285714285714,
+      "migration_count": 0,
+      "migration_rate": 0,
+      "filter_pass_rate": 0.3685185185185185,
+      "latency_percentiles_ms": {
+        "p50": 4.7878585000000005,
+        "p90": 5.8037565,
+        "p95": 6.1345655,
+        "p99": 6.8110032,
+        "p999": 6.903867305000001,
+        "max": 6.913817
+      },
+      "filter_percentiles_ms": {
+        "p50": 0.000802,
+        "p95": 0.003655999999999997,
+        "p99": 0.012355739999999976
+      },
+      "rank_percentiles_ms": {
+        "p50": 0.001072,
+        "p95": 0.004373449999999998,
+        "p99": 0.01161980999999995
+      },
+      "bind_percentiles_ms": {
+        "p50": 4.2593155,
+        "p95": 6.059482299999999,
+        "p99": 6.737547589999998
+      },
+      "system": {
+        "peak_cpu_pct": 0,
+        "peak_memory_mb": 0,
+        "avg_cpu_pct": 0,
+        "avg_memory_mb": 0,
+        "cpu_samples": null,
+        "memory_samples": null
+      },
+      "encryption_overhead": {
+        "enc_pods": 48,
+        "non_enc_pods": 102,
+        "enc_mean_latency_ms": 2.6468012291666656,
+        "non_enc_mean_latency_ms": 3.684697137254904,
+        "enc_p99_latency_ms": 6.503303020000001,
+        "non_enc_p99_latency_ms": 6.655429449999999
+      },
+      "success_rate": 0.7066666666666667,
+      "bind_conflicts": 0,
+      "bind_other_errors": 0,
+      "reserve_rejects": 0,
+      "reuse_fallbacks": 0,
+      "placement": {
+        "nodes": [
+          {
+            "name": "worker-1",
+            "cluster": "cluster0",
+            "region": "Asia",
+            "cpu_used_milli": 7900,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10112,
+            "mem_capacity_mb": 15360,
+            "pods": 21,
+            "cpu_util": 0.9875,
+            "mem_util": 0.6583333333333333
+          },
+          {
+            "name": "worker-2",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 56,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-3",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 1800,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 2304,
+            "mem_capacity_mb": 15360,
+            "pods": 18,
+            "cpu_util": 0.225,
+            "mem_util": 0.15
+          },
+          {
+            "name": "worker-4",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 3900,
+            "cpu_capacity_milli": 4000,
+            "mem_used_mb": 4992,
+            "mem_capacity_mb": 7168,
+            "pods": 11,
+            "cpu_util": 0.975,
+            "mem_util": 0.6964285714285714
+          }
+        ],
+        "cpu_jain": 0.8533912541340752,
+        "cpu_imbalance": 0.14660874586592476,
+        "cpu_cv": 0.4144821628048095,
+        "mem_jain": 0.8508802978997656,
+        "mem_cv": 0.4186328264328896,
+        "pod_jain": 0.6984087518647439,
+        "pod_cv": 0.6571348968780376,
+        "mean_cpu_util": 0.796875,
+        "max_cpu_util": 1,
+        "nodes_used": 4,
+        "nodes_empty": 0,
+        "nodes_over_90pct_cpu": 3,
+        "nodes_total": 4,
+        "shadow_checked": 0,
+        "misplaced": 0,
+        "misplacement_rate": 0,
+        "score_regret_mean": 0,
+        "score_regret_max": 0,
+        "score_regret_rel_mean": 0
+      },
+      "violations": {
+        "gdpr_pods": 48,
+        "isolation_pods": 26,
+        "encryption_pods": 28,
+        "residency_violations": 0,
+        "isolation_violations": 0,
+        "encryption_violations": 0,
+        "pods_violating": 0,
+        "pods_checked": 48,
+        "residency_violation_rate": 0,
+        "overall_violation_rate": 0
+      }
+    },
+    {
+      "run": 3,
+      "throughput_pods_sec": 1475.928989216301,
+      "duration_ms": 76.561949,
+      "scheduled": 113,
+      "failed": 37,
+      "queue_reuse_count": 13,
+      "queue_reuse_rate": 0.09285714285714286,
+      "migration_count": 0,
+      "migration_rate": 0,
+      "filter_pass_rate": 0.3302919708029197,
+      "latency_percentiles_ms": {
+        "p50": 5.704123,
+        "p90": 9.7406606,
+        "p95": 17.415173199999995,
+        "p99": 20.238926479999993,
+        "p999": 20.507083760000004,
+        "max": 20.517054
+      },
+      "filter_percentiles_ms": {
+        "p50": 0.000746,
+        "p95": 0.003858049999999991,
+        "p99": 0.022307369999999965
+      },
+      "rank_percentiles_ms": {
+        "p50": 0.0010965,
+        "p95": 0.0040630499999999995,
+        "p99": 0.005985519999999991
+      },
+      "bind_percentiles_ms": {
+        "p50": 4.9063605,
+        "p95": 16.500510749999982,
+        "p99": 19.647709959999986
+      },
+      "system": {
+        "peak_cpu_pct": 0,
+        "peak_memory_mb": 0,
+        "avg_cpu_pct": 0,
+        "avg_memory_mb": 0,
+        "cpu_samples": null,
+        "memory_samples": null
+      },
+      "encryption_overhead": {
+        "enc_pods": 42,
+        "non_enc_pods": 108,
+        "enc_mean_latency_ms": 3.709869809523809,
+        "non_enc_mean_latency_ms": 5.51199152777778,
+        "enc_p99_latency_ms": 14.300815659999962,
+        "non_enc_p99_latency_ms": 20.317721279999986
+      },
+      "success_rate": 0.7533333333333333,
+      "bind_conflicts": 0,
+      "bind_other_errors": 0,
+      "reserve_rejects": 0,
+      "reuse_fallbacks": 0,
+      "placement": {
+        "nodes": [
+          {
+            "name": "worker-1",
+            "cluster": "cluster0",
+            "region": "Asia",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 24,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-2",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 48,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-3",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 2900,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 3712,
+            "mem_capacity_mb": 15360,
+            "pods": 29,
+            "cpu_util": 0.3625,
+            "mem_util": 0.24166666666666667
+          },
+          {
+            "name": "worker-4",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 4000,
+            "cpu_capacity_milli": 4000,
+            "mem_used_mb": 5120,
+            "mem_capacity_mb": 7168,
+            "pods": 12,
+            "cpu_util": 1,
+            "mem_util": 0.7142857142857143
+          }
+        ],
+        "cpu_jain": 0.9026620428122348,
+        "cpu_imbalance": 0.09733795718776517,
+        "cpu_cv": 0.32838137987365335,
+        "mem_jain": 0.8989441457630184,
+        "mem_cv": 0.3352852008565353,
+        "pod_jain": 0.8259379042690815,
+        "pod_cv": 0.4590694636935553,
+        "mean_cpu_util": 0.840625,
+        "max_cpu_util": 1,
+        "nodes_used": 4,
+        "nodes_empty": 0,
+        "nodes_over_90pct_cpu": 3,
+        "nodes_total": 4,
+        "shadow_checked": 0,
+        "misplaced": 0,
+        "misplacement_rate": 0,
+        "score_regret_mean": 0,
+        "score_regret_max": 0,
+        "score_regret_rel_mean": 0
+      },
+      "violations": {
+        "gdpr_pods": 44,
+        "isolation_pods": 23,
+        "encryption_pods": 27,
+        "residency_violations": 0,
+        "isolation_violations": 0,
+        "encryption_violations": 0,
+        "pods_violating": 0,
+        "pods_checked": 44,
+        "residency_violation_rate": 0,
+        "overall_violation_rate": 0
+      }
+    },
+    {
+      "run": 4,
+      "throughput_pods_sec": 1276.8393129284293,
+      "duration_ms": 83.017494,
+      "scheduled": 106,
+      "failed": 44,
+      "queue_reuse_count": 19,
+      "queue_reuse_rate": 0.1357142857142857,
+      "migration_count": 0,
+      "migration_rate": 0,
+      "filter_pass_rate": 0.3416030534351145,
+      "latency_percentiles_ms": {
+        "p50": 6.5395725,
+        "p90": 12.466752,
+        "p95": 13.84704825,
+        "p99": 15.240678950000003,
+        "p999": 15.507468115000002,
+        "max": 15.532588
+      },
+      "filter_percentiles_ms": {
+        "p50": 0.000866,
+        "p95": 0.004547099999999986,
+        "p99": 0.16393819999999998
+      },
+      "rank_percentiles_ms": {
+        "p50": 0.0010825000000000001,
+        "p95": 0.004702599999999991,
+        "p99": 0.014287669999999877
+      },
+      "bind_percentiles_ms": {
+        "p50": 5.458295,
+        "p95": 13.528059049999998,
+        "p99": 14.740192449999991
+      },
+      "system": {
+        "peak_cpu_pct": 0,
+        "peak_memory_mb": 0,
+        "avg_cpu_pct": 0,
+        "avg_memory_mb": 0,
+        "cpu_samples": null,
+        "memory_samples": null
+      },
+      "encryption_overhead": {
+        "enc_pods": 42,
+        "non_enc_pods": 108,
+        "enc_mean_latency_ms": 5.370555142857144,
+        "non_enc_mean_latency_ms": 5.383598092592592,
+        "enc_p99_latency_ms": 14.850472689999995,
+        "non_enc_p99_latency_ms": 14.21961056
+      },
+      "success_rate": 0.7066666666666667,
+      "bind_conflicts": 0,
+      "bind_other_errors": 0,
+      "reserve_rejects": 0,
+      "reuse_fallbacks": 0,
+      "placement": {
+        "nodes": [
+          {
+            "name": "worker-1",
+            "cluster": "cluster0",
+            "region": "Asia",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 22,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-2",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 50,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-3",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 1900,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 2432,
+            "mem_capacity_mb": 15360,
+            "pods": 19,
+            "cpu_util": 0.2375,
+            "mem_util": 0.15833333333333333
+          },
+          {
+            "name": "worker-4",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 4000,
+            "cpu_capacity_milli": 4000,
+            "mem_used_mb": 5120,
+            "mem_capacity_mb": 7168,
+            "pods": 15,
+            "cpu_util": 1,
+            "mem_util": 0.7142857142857143
+          }
+        ],
+        "cpu_jain": 0.8573309135524767,
+        "cpu_imbalance": 0.1426690864475233,
+        "cpu_cv": 0.40793474618417574,
+        "mem_jain": 0.8542259393823598,
+        "mem_cv": 0.41309862383626866,
+        "pod_jain": 0.7868347338935574,
+        "pod_cv": 0.5204948763824047,
+        "mean_cpu_util": 0.809375,
+        "max_cpu_util": 1,
+        "nodes_used": 4,
+        "nodes_empty": 0,
+        "nodes_over_90pct_cpu": 3,
+        "nodes_total": 4,
+        "shadow_checked": 0,
+        "misplaced": 0,
+        "misplacement_rate": 0,
+        "score_regret_mean": 0,
+        "score_regret_max": 0,
+        "score_regret_rel_mean": 0
+      },
+      "violations": {
+        "gdpr_pods": 41,
+        "isolation_pods": 25,
+        "encryption_pods": 28,
+        "residency_violations": 0,
+        "isolation_violations": 0,
+        "encryption_violations": 0,
+        "pods_violating": 0,
+        "pods_checked": 41,
+        "residency_violation_rate": 0,
+        "overall_violation_rate": 0
+      }
+    },
+    {
+      "run": 5,
+      "throughput_pods_sec": 1123.920662360164,
+      "duration_ms": 99.651162,
+      "scheduled": 112,
+      "failed": 38,
+      "queue_reuse_count": 15,
+      "queue_reuse_rate": 0.10714285714285714,
+      "migration_count": 0,
+      "migration_rate": 0,
+      "filter_pass_rate": 0.3537037037037037,
+      "latency_percentiles_ms": {
+        "p50": 7.9145129999999995,
+        "p90": 13.9325261,
+        "p95": 15.590690799999987,
+        "p99": 17.38437437,
+        "p999": 17.65252771,
+        "max": 17.671663
+      },
+      "filter_percentiles_ms": {
+        "p50": 0.000937,
+        "p95": 0.004112499999999993,
+        "p99": 0.05141464999999954
+      },
+      "rank_percentiles_ms": {
+        "p50": 0.0013375000000000001,
+        "p95": 0.006065649999999995,
+        "p99": 0.007696089999999999
+      },
+      "bind_percentiles_ms": {
+        "p50": 6.455578,
+        "p95": 14.509996249999988,
+        "p99": 16.980320299999992
+      },
+      "system": {
+        "peak_cpu_pct": 0,
+        "peak_memory_mb": 0,
+        "avg_cpu_pct": 0,
+        "avg_memory_mb": 0,
+        "cpu_samples": null,
+        "memory_samples": null
+      },
+      "encryption_overhead": {
+        "enc_pods": 45,
+        "non_enc_pods": 105,
+        "enc_mean_latency_ms": 6.0978346666666665,
+        "non_enc_mean_latency_ms": 6.628812466666668,
+        "enc_p99_latency_ms": 16.327194840000004,
+        "non_enc_p99_latency_ms": 16.45118
+      },
+      "success_rate": 0.7466666666666667,
+      "bind_conflicts": 0,
+      "bind_other_errors": 0,
+      "reserve_rejects": 0,
+      "reuse_fallbacks": 0,
+      "placement": {
+        "nodes": [
+          {
+            "name": "worker-1",
+            "cluster": "cluster0",
+            "region": "Asia",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 25,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-2",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 8000,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 10240,
+            "mem_capacity_mb": 15360,
+            "pods": 52,
+            "cpu_util": 1,
+            "mem_util": 0.6666666666666666
+          },
+          {
+            "name": "worker-3",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 2200,
+            "cpu_capacity_milli": 8000,
+            "mem_used_mb": 2816,
+            "mem_capacity_mb": 15360,
+            "pods": 22,
+            "cpu_util": 0.275,
+            "mem_util": 0.18333333333333332
+          },
+          {
+            "name": "worker-4",
+            "cluster": "cluster0",
+            "region": "Europe",
+            "cpu_used_milli": 4000,
+            "cpu_capacity_milli": 4000,
+            "mem_used_mb": 5120,
+            "mem_capacity_mb": 7168,
+            "pods": 13,
+            "cpu_util": 1,
+            "mem_util": 0.7142857142857143
+          }
+        ],
+        "cpu_jain": 0.871824832351148,
+        "cpu_imbalance": 0.12817516764885195,
+        "cpu_cv": 0.38343109480532395,
+        "mem_jain": 0.8684885786751818,
+        "mem_cv": 0.38913444953020776,
+        "pod_jain": 0.7875439477649422,
+        "pod_cv": 0.5193942704374638,
+        "mean_cpu_util": 0.81875,
+        "max_cpu_util": 1,
+        "nodes_used": 4,
+        "nodes_empty": 0,
+        "nodes_over_90pct_cpu": 3,
+        "nodes_total": 4,
+        "shadow_checked": 0,
+        "misplaced": 0,
+        "misplacement_rate": 0,
+        "score_regret_mean": 0,
+        "score_regret_max": 0,
+        "score_regret_rel_mean": 0
+      },
+      "violations": {
+        "gdpr_pods": 49,
+        "isolation_pods": 24,
+        "encryption_pods": 30,
+        "residency_violations": 0,
+        "isolation_violations": 0,
+        "encryption_violations": 0,
+        "pods_violating": 0,
+        "pods_checked": 49,
+        "residency_violation_rate": 0,
+        "overall_violation_rate": 0
+      }
+    }
+  ]
+}

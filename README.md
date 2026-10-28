@@ -74,7 +74,7 @@ To schedule onto a cluster's own kubelet-backed nodes instead:
 
 ```
 bin/benchmark -kubeconfig real.yaml -real-nodes -region-mode uniform \
-  -pods 300 -runs 5 -privacy-ratio 0.5 -output real.json
+  -pods 150 -runs 5 -privacy-ratio 0.5 -output real.json
 ```
 
 `-real-nodes` labels the schedulable nodes (regions and security properties; `uniform` spreads the regions evenly), reads their capacity from `status.allocatable`, counts the pods already running on them, and creates small `pause` pods that actually run.
@@ -94,6 +94,10 @@ Run the verifier before the next run, since the benchmark clears the namespace a
 - `-label-churn-ms 50` moves a European node out of Europe every 50 ms during the run; `-recheck-gates=false` and `-disable-reuse` switch off the re-check and ranking reuse.
 - `affinitywebhook -crash-after N` stops the webhook after N admissions (needs `-cert`/`-key` and a `MutatingWebhookConfiguration` pointing at it).
 - `compare -karmada-members eu=eu.yaml,...` with `-kubeconfig` set to the Karmada API server runs the pods through Karmada (we used v1.19.0). Pods with the residency requirement get the label `residency=required` for your propagation policies.
+
+## Results
+
+`results/` has the reports of the live-cluster runs (September 2026, five runs each): `aws_federation.json` and `hetzner_federation.json` (2000 pods per run across three clusters, about half of them residency-bound) and `real_nodes.json` (150 pods per run on four kubelet-backed workers). They were written by an earlier revision of the benchmark, so a few config fields differ from what this version writes; the AWS run, for example, used a Redis pod queue.
 
 ## License
 
