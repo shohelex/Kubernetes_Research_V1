@@ -1,5 +1,7 @@
 # Kubernetes_Research_V1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23737115.svg)](https://doi.org/10.5281/zenodo.23737115)
+
 Code for our paper on enforcing data residency, isolation and encryption when scheduling pods across Kubernetes clusters. The scheduler drops every node of every cluster that does not meet a pod's requirements before it ranks anything, checks the node's labels again right before binding, and can write each decision to a hash-chained log.
 
 ## Layout
